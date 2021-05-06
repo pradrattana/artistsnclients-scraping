@@ -57,7 +57,7 @@ def get_completed(url):
     soup = get_soup(url)
     next_url = 'https://artistsnclients.com' + soup.select_one('div.immi_slotartistname > a')['href']
     soup = get_soup(next_url)
-    return soup.select_one('.user_commiss > a > span').text.strip().rstrip(' Completed commissions')
+    return soup.select_one('.user_commiss > span').text.strip().rstrip(' Completed commissions')
 
 def get_title(url):
     soup = get_soup(url)
