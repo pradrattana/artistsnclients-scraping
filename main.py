@@ -7,8 +7,8 @@ stop_page = 32 # 32=>ดึง2หน้า, 64=>3หน้า, 96=>4หน้�
 
 """
 ดึง 2 หน้าสุดท้าย
-start_page = 10816
-stop_page = 10848
+start_page = 10848
+stop_page = 10880
 """
 
 url = get_url_list(start_page, stop_page)
@@ -31,6 +31,6 @@ with open('web_scraping.csv', 'a+', newline='') as file:
             artist_rate = get_artist_rating(j)
             completed = get_completed(j)
             description = get_description(j)
-        except (AttributeError, UnidentifiedImageError):
+        except (AttributeError, TypeError, UnidentifiedImageError):
             pass
         writer.writerow([img_url, img_path, duration, price, size, color, background, like, artist_rate, completed])
