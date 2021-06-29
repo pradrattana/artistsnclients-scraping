@@ -1,4 +1,4 @@
-# https://stackoverflow.com/questions/20068945/detect-if-image-is-color-grayscale-or-black-and-white-with-python-pil
+# https://stackoverflow.com/a/23035464
 
 from PIL import Image, ImageStat
 import requests
