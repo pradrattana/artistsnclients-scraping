@@ -24,7 +24,6 @@ with open('web_scraping.csv', 'a+', newline='') as file:
             size = get_size(j)
             color = 1 if detect_color_image(img_url)=='color' else 0
             bg = get_bg(j) if color==1 else 0
-            description = get_description(j)
         except (AttributeError, TypeError, UnidentifiedImageError):
             pass
         writer.writerow([url, path, price, day, like, completed, rate, size, color, bg])
